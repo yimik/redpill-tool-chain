@@ -15,6 +15,7 @@
 - 为`DS3617xs`提供DSM7适配支持 ( 感谢 [@jimmyGALLAND](https://github.com/jimmyGALLAND) )
 - 为`DVA3221`提供DSM7适配支持 ( 感谢 [@dogodefi](https://github.com/dogodefi) )
 - 整理社区扩展驱动 ( 感谢 [@pocopico](https://github.com/pocopico) )
+- 部分引导提取自 [@tinycore-redpill](https://github.com/pocopico/tinycore-redpill) 项目
 - `redpill_lkm_make_target`字段的可选值有 `dev-v6`, `dev-v7`, `test-v6`, `test-v7`, `prod-v6` 或者 `prod-v7`，
   需要注意后缀为`-v6`的值用于 DSM6 版本构建， 需要注意后缀为`-v7`的值用于 DSM7 版本构建. 默认使用的是 `dev-v6` 和 `dev-v7`。
 
@@ -89,7 +90,7 @@
 ```txt
 Usage: ./redpill_tool_chain.sh <action> <platform version>
 
-Actions: build, auto, run, clean, add, del, sn
+Actions: build, auto, run, clean, add, del, sn, pat
 
 - build:    Build the toolchain image for the specified platform version.
 
@@ -112,25 +113,30 @@ Actions: build, auto, run, clean, add, del, sn
             DS3615xs DS3617xs DS916+ DS918+ DS920+ DS3622xs+ FS6400 DVA3219 DVA3221 DS1621+
             eg: sn ds920p
 
+- pat:      For decoding PAT file. see: https://github.com/tossp/redpill-tool-chain/blob/master/.github/workflows/pat.yml
+
 Available platform versions:
 ---------------------
-ds3615xs-6.2.4-25556
-ds3615xs-7.0-41222
-ds3615xs-7.0.1-42218
-ds918p-6.2.4-25556
-ds918p-7.0-41890
-ds918p-7.0.1-42218
-ds3617xs-7.0.1-42218
-ds3622xsp-7.0.1-42218
-ds920p-7.0.1-42218
 ds1621p-7.0.1-42218
+ds1621p-7.1.0-42661
+ds3615xs-6.2.4-25556
+ds3615xs-7.0.1-42218
+ds3615xs-7.1.0-42661
+ds3617xs-7.0.1-42218
+ds3617xs-7.1.0-42661
+ds3622xsp-7.0.1-42218
+ds3622xsp-7.1.0-42661
+ds918p-6.2.4-25556
+ds918p-7.0.1-42218
+ds918p-7.1.0-42661
+ds920p-7.0.1-42218
+ds920p-7.1.0-42661
 dva3221-7.0.1-42218
+dva3221-7.1.0-42661
 
 Custom Extensions:
 ---------------------
 jumkey.acpid2
-pocopico.mpt3sas
-pocopico.vmxnet3
 thethorgroup.boot-wait
 thethorgroup.virtio
 
